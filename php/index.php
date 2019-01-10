@@ -132,12 +132,13 @@ foreach($data as $k1 => $value1){
             echo "{$k4}"; ?></td>
             <td><?php echo "{$value4}"; ?></td>
   </tr>
-  <tr>
-    
-  </tr>
+  <?php
+
+?>
   </tbody>
 </table>
-<?php     };
+<?php    
+          };
         };
       };
     };
