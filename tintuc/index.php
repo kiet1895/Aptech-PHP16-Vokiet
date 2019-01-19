@@ -158,7 +158,7 @@ $menu = $noi_dung['menu'];
                         <ul>
                             <?php
                             $loaitin = explode(',',$mn->LoaiTin);
-                           // print_r($loaitin);
+                           //print_r($mn);
                            foreach($loaitin as $loai){
                                list($id,$Ten,$Tenkhongdau)= explode(':',$loai);
                                ?>
