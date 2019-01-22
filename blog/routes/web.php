@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/trangchu', 'Controller@returnview');
 
 route:: get('lines',function(){
-    return view('lines');
+    return view('index');
 });
 
 
