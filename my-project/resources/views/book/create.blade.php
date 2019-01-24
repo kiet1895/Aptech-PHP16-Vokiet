@@ -1,6 +1,6 @@
 <form role="form" method="POST" action="{{ route('book.store') }}" enctype="multipart/form-data">
     {{csrf_field()}}
-    {{ dd(csrf_field())}}
+    {{-- {{ dd(csrf_field())}} --}}
 
     <label >Title</label>
     <input type="text" name="title">

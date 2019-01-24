@@ -16,7 +16,7 @@ class LineController extends Controller
         //
         $line = nguoidung::get();
        // dd($line);
-        return view('nguoidung',compact('line'));
+        return view('html.nguoidung',compact('line'));
     }
 
     /**
@@ -27,6 +27,7 @@ class LineController extends Controller
     public function create()
     {
         //
+        return view('html.create');
     }
 
     /**
@@ -38,6 +39,12 @@ class LineController extends Controller
     public function store(Request $request)
     {
         //
+        $line = new nguoidung($request->all());
+        $result = $line->save();
+        if ($result) {
+            echo('Success');
+        } else echo('Fail');
+        return redirect()->route('trangchu.index');
     }
 
     /**
@@ -60,9 +67,8 @@ class LineController extends Controller
     public function edit($id)
     {
         //
-        $line = nguoidung::where('id',$id)->firstOrFail();
-        $line->delete();
-        return redirect()->route('lines.index');
+        // $book = Book::findOrFail($id);
+        // return view('book.edit', compact('book'));
     }
 
     /**
@@ -75,6 +81,12 @@ class LineController extends Controller
     public function update(Request $request, $id)
     {
         //
+        // $book = Book::findOrFail($id);
+        // $value = $book->update($request->all());
+        // if ($value) {
+        //     echo("Success");
+        // } else echo ("Fail");
+        // return redirect()->route('book.index');
     }
 
     /**
@@ -86,7 +98,8 @@ class LineController extends Controller
     public function destroy($id)
     {
         //
-        nguoidung::find($id)->delete();
-        return redirect()->route('lines.index');
+        $line = nguoidung::findOrFail($id);
+        $line->delete();
+        return redirect()->route('trangchu.index');
     }
 }

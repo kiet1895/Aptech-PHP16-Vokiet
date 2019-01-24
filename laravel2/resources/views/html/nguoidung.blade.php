@@ -9,16 +9,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-        {{-- @foreach ($line as $item)
-        <h1>{{$item->name}}</h1>
-        <h3>{{$item->email}}</h3>
-    @endforeach --}}
-    @foreach ($line as $item)
-        
-    <form action="{{ url($item->id.'/edit') }}" method="POST">
-        @endforeach
-    {{ csrf_field() }}
-    {{ method_field('DELETE') }}
     <table class="table">
       <thead>
         <tr>
@@ -39,14 +29,17 @@
           <td>{{$item->email}}</td>
           <td>{{$item->sdt}}</td>
           <td>
-            <button name="_method" value="DELETE" type="submit" class="btn btn-outline-primary">Thêm</button>
-            <button name="btn-sua" type="submit" class="btn btn-outline-primary">Sửa</button>
-            <button name="btn-xoa" type="submit" class="btn btn-outline-danger">Xóa</button>
+            <button name="POST" type="submit" class="btn btn-outline-primary">edit</button>
+          <button name="btn-sua" type="submit" class="btn btn-outline-primary"><a href="{{route('trangchu.create',$item->id)}}">them</a></button>
+        <form action="{{route('trangchu.destroy',$item->id)}}" method="POST">
+          {{csrf_field()}}
+          {{method_field('DELETE')}}
+            <button type="submit" class="btn btn-outline-danger">Xóa</button>
           </td>
+        </form>
         </tr>
         @endforeach
       </tbody>
     </table>
-  </form>
 </body>
 </html>

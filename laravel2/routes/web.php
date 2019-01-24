@@ -14,7 +14,7 @@
 Route::get('/trangchu', function () {
     return view('index');
 });
-Route::resource('/lines', 'LineController');
+Route::resource('/trangchu', 'LineController');
 
 Auth::routes();
 
