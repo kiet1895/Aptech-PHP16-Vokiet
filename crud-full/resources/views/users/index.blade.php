@@ -31,7 +31,6 @@
           <button name="btn-sua" type="submit" class="btn btn-outline-primary"><a href="{{ route('user.edit',[$item->id])}}">Sửa</a></button>
           <button name="btn-xoa" type="submit" class="btn btn-outline-danger"><a href="{{ route('user.destroy',[$item->id])}}">Xóa</a></button>
         </td>
-      </form>
       </tr>
       @endforeach
     </tbody>

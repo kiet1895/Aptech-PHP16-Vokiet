@@ -16,16 +16,17 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
+route::resource('/user','UserController');
 
-route::get('users/nguoidung','UserController@create')->name('users.nguoidung');
-route::POST('users/store','UserController@store')->name('user.store');
-route::get('user/index','UserController@index')->name('users.index');
-// route::get('user/show/{id}','UserController@show')->name('user.show');
-route::get('user/edit/{id}','UserController@edit')->name('user.edit');
-route::POST('user/update/{id}','UserController@update')->name('user.update');
-route::get('user/destroy/{id}','UserController@destroy')->name('user.destroy');
+// route::get('users/nguoidung','UserController@create')->name('users.nguoidung');
+// route::POST('users/store','UserController@store')->name('user.store');
+// route::get('user/index','UserController@index')->name('users.index');
+// // route::get('user/show/{id}','UserController@show')->name('user.show');
+// route::get('user/edit/{id}','UserController@edit')->name('user.edit');
+// route::POST('user/update/{id}','UserController@update')->name('user.update');
+// route::get('user/destroy/{id}','UserController@destroy')->name('user.destroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 

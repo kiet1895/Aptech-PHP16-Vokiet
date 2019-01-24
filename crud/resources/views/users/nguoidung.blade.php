@@ -17,6 +17,6 @@
     <input type="text" name="email">
     <button type="submit">Create</button>
 </form>
-<button type="button" class="btn btn-outline-danger"><a href="{{route('users.index') }}">Back</a></button>
+<button type="button" class="btn btn-outline-danger"><a href="{{route('user.index') }}">Back</a></button>
 </body>
 </html>

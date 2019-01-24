@@ -26,12 +26,20 @@
       <th scope="row">{{$item->id}}</th>
         <td>{{$item->name}}</td>
         <td>{{$item->email}}</td>
-        <td>
-        <button name="btn-them" type="submit" class="btn btn-outline-primary"><a href="{{ route('users.nguoidung')}}">Them</a></button>
-          <button name="btn-sua" type="submit" class="btn btn-outline-primary"><a href="{{ route('user.edit',[$item->id])}}">Sửa</a></button>
-          <button name="btn-xoa" type="submit" class="btn btn-outline-danger"><a href="{{ route('user.destroy',[$item->id])}}">Xóa</a></button>
+        
+        <td class="d-flex justify-content-between">
+        <form action="{{ route('user.create')}}">
+        <button name="btn-them" type="submit" class="btn btn-outline-primary">Them</button>
+        </form>
+        <form action="{{ route('user.edit',[$item->id])}}">
+          <button name="btn-sua" type="submit" class="btn btn-outline-primary">Sửa</button>
+        </form>
+          <form action="{{ route('user.destroy',$item->id)}}" method="post" >
+            <input type="hidden" name="_method" value="delete">
+            {{csrf_field()}}
+            <button type="submit" class="btn btn-outline-danger">Xóa</button>
+          </form>
         </td>
-      </form>
       </tr>
       @endforeach
     </tbody>

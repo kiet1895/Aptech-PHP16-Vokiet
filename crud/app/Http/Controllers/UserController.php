@@ -50,7 +50,7 @@ class UserController extends Controller
         // ]);
         $user = new UserModel($request->all());
         $user->save();
-        return redirect()->route('users.index');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -96,9 +96,10 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         // $user = DB::table('users')->where('id',$id)->update(['name'=>$request->name,'email'=>$request->email]);
+        // dd($request);
         $user = UserModel::findOrFail($id);
         $user->update($request->all());
-        return redirect()->route('users.index');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -112,8 +113,9 @@ class UserController extends Controller
         //
         // $user = DB::table('users')->where('id', $id);
         // $user->delete();
+        // dd($id);
         $user = UserModel::findOrFail($id);
         $user->delete();
-        return redirect()->route('users.index') ;
+        return redirect()->route('user.index') ;
     }
 }

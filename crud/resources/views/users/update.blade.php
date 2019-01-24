@@ -23,10 +23,11 @@
       <tr>
           <form action="{{route('user.update',[$user->id])}}" method="POST">
               {{csrf_field()}}
+              {{method_field('PUT')}}
         <td><input name="name" type="text" value="{{$user->name}}"></td>
         <td><input name="email" type="text" value="{{$user->email}}"></td>
         <td>
-            <input type="hidden" name="_method" value="POST">
+            {{-- <input type="hidden" name="_method" value="POST"> --}}
           <button type="submit" class="btn btn-outline-primary">Update</button>
         </form>
         </td>
@@ -35,6 +36,6 @@
       {{-- @endforeach --}}
     </tbody>
   </table>
-<button type="button" class="btn btn-outline-danger"><a href="{{route('users.index') }}">Back</a></button>
+<button type="button" class="btn btn-outline-danger"><a href="{{route('user.index') }}">Back</a></button>
 </body>
 </html>
