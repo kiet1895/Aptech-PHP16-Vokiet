@@ -21,15 +21,18 @@
       </tr>
     </thead>
     <tbody>
+      @php
+          $i=1;
+      @endphp
       @foreach ($user as $item)
       <tr>
-      <th scope="row">{{$item->id}}</th>
+        <th scope="row">{{$i++}}</th>
         <td>{{$item->name}}</td>
         <td>{{$item->email}}</td>
         
         <td class="d-flex justify-content-between">
         <form action="{{ route('user.create')}}">
-        <button name="btn-them" type="submit" class="btn btn-outline-primary">Them</button>
+        <button type="submit" class="btn btn-outline-primary">Them</button>
         </form>
         <form action="{{ route('user.edit',[$item->id])}}">
           <button name="btn-sua" type="submit" class="btn btn-outline-primary">Sửa</button>
