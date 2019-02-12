@@ -31,10 +31,10 @@
         <td>{{$item->email}}</td>
         
         <td class="d-flex justify-content-between">
-        <form action="{{ route('user.create')}}">
-        <button type="submit" class="btn btn-outline-primary">Them</button>
+        <form action="{{route('user.create')}}">
+        <button type="submit" class="btn btn-outline-primary">Thêm</button>
         </form>
-        <form action="{{ route('user.edit',[$item->id])}}">
+        <form action="{{route('user.edit',[$item->id])}}">
           <button name="btn-sua" type="submit" class="btn btn-outline-primary">Sửa</button>
         </form>
           <form action="{{ route('user.destroy',$item->id)}}" method="post" >

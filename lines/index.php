@@ -23,9 +23,9 @@ if(isset($_POST['dangnhap'])){
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Bay </title>
       <link rel="stylesheet" href="public/css/bootstrap.min.css">
+      <link rel="stylesheet" href="public/js/jquery.min.js">
       <link rel="stylesheet" href="public/fontawesome-free-5.5.0-web/css/all.css">
       <link rel="stylesheet" href="public/css/style.css">
-      <link rel="stylesheet" href="public/js/jquery.min.js">
       <link rel="stylesheet" href="public/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
       <link rel="stylesheet" href="public/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
       <script src="public/js/jquery.min.js"></script>
