@@ -2,16 +2,14 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Post::class, function (Faker $faker) {
+$factory->define(App\ChuyenBay::class, function (Faker $faker) {
     return [
         //
         'hang' => $faker->name,
         'loai ve' => $faker->unique()->safeEmail,
-        'khoi hanh' => $faker->khoihanh,
-        'ha canh' => $faker->hacanh,
-        'ngay di' => new Date,
-        'gio bay' => new Time,
-        'created_at' => new DateTime,
-        'updated_at' => new DateTime,
+        'khoi hanh' => $faker->city,
+        'ha canh' => $faker->city,
+        'ngay di' => $faker->date($format = 'Y-m-d', $max = '2019-2-20'),
+        'gio bay' => $faker->time($format = 'h:m:s'),
     ];
 });

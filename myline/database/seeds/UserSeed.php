@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class ChuyenBaySeeder extends Seeder
+class UserSeed extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class ChuyenBaySeeder extends Seeder
     {
         //
         Model::unguard();
-        factory(App\ChuyenBay::class, 15)->create();
+        factory(App\User::class, 15)->create();
         Model::reguard();
     }
 }

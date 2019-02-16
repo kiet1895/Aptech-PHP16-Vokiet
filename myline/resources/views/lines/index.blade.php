@@ -45,6 +45,16 @@
                         </ul>
                      </div>
                   </nav>
+                  @if (Auth::check())
+                     <span>Xin Chào {{Auth::user()->username}} </span>
+                     <form action="{{ route('logout') }}" method="POST">
+                        {{csrf_field()}}
+                        <button class="btn btn-outline-primary" type="submit" name="logout">
+                          {{-- {{__('Log out')}} --}}
+                          Logout
+                        </button>
+                      </form>
+                  @else
                   <button type="button" class="btn btn-outline-primary my-3" data-toggle="modal" data-target="#login">Sign in</button>
                   <!-- ?login -->
                   <div class="modal fade" id="login" tabindex="-1" role="dialog">
@@ -57,7 +67,8 @@
                               </button>
                            </div>
                            <div class="modal-body">
-                              <form method="POST" action="#">
+                           <form method="POST" action="{{route('login')}}">
+                              {{ csrf_field() }}
                                  <div class="form-row">
                                     <div class="form-group col-md-6">
                                        <label for="inputEmail4">Email</label>
@@ -69,6 +80,7 @@
                                     </div>
                                  </div>
                                  <div class="modal-footer">
+                                    <a href="{{ route('register') }}">Tạo tài khoản</a>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" name="dangnhap" class="btn btn-primary">Submit</button>
                                  </div>
@@ -78,6 +90,8 @@
                      </div>
                   </div>
                   <!-- end lgin -->
+                  @endif
+                  
                </div>
             </div>
          </div>
@@ -556,6 +570,7 @@
                </div>
             </div>
          </div>
+         
       </main>
       <footer>
          <div class="container mt-5">

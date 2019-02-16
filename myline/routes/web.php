@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 route::resource('/lines','LineController');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

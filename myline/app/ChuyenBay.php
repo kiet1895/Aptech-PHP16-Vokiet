@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ChuyenBay extends Model
 {
-    //
-    protected $table = 'chuyen bay';
+    protected $table = 'chuyenbay';
     protected $fillable = [
         'hang',
         'loai ve',
